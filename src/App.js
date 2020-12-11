@@ -30,7 +30,7 @@ function App() {
       <NavigationBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/work" render={(props) => <Work {...props} work={work} />} />
+          <Route exact path="/work" render={(props) => <Work {...props} work={work} />} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route component={NoMatch} />
