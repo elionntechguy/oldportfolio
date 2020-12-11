@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Jumbotron, Container, CardDeck, Card } from 'react-bootstrap';
+import { Jumbotron, Container, CardDeck, Card, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import banner from '../assets/bg.jpg';
 
@@ -23,7 +23,7 @@ const Styles = styled.div`
         justify-content: space-around;
     }
 
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 1080px) {
         .card-deck {
             flex-direction: column;
             padding: 80px;
@@ -41,6 +41,10 @@ const Styles = styled.div`
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
         border: none;
+    }
+
+    .card-img-top {
+        padding: 20px;
     }
 
 `;
@@ -70,6 +74,7 @@ function Work(props) {
                         <Card.Text>
                         {item.content}
                         </Card.Text>
+                        <a className="btn btn-primary" target="_blank" href={item.link}>view</a>
                     </Card.Body>
                 </Card>
                 })}
