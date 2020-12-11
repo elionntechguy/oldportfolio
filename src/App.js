@@ -9,7 +9,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import NoMatch from './components/NoMatch';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
 
