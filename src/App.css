@@ -2,11 +2,6 @@
   font-family: 'Lato', sans-serif;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
 .footer {
   background-color: #032539;
   height: 200px;
