@@ -85,8 +85,12 @@ function About() {
                     <h2>Elion Shkololli</h2>
                     <p>
                         hi, i'm Elion Shkololli.
-                        i'm a fullstack developer, passionate about tech, tv shows, and programming.
+                        i'm a fullstack developer,
+                        <br /> 
+                        passionate about tech, tv shows, and programming.
+                        <br />
                         i build web apps, usually with Django and React.
+                        <br />
                         i love Python.
                     </p>
                 </div>
