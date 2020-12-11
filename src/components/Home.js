@@ -48,7 +48,9 @@ function Home() {
                     a fullstack developer
                 </h1>
                 <br />
-                <Link to="/work" className="workbtn">Work</Link>
+                <a className="workbtn" href="#/work">
+                    view my work
+                </a>
             </Container>
         </Styles>
     )
