@@ -2,6 +2,7 @@ import React from 'react'
 import { Jumbotron, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import banner from '../assets/bg.jpg';
+import { Link } from "react-router-dom";
 
 const Styles = styled.div`
     
@@ -47,9 +48,7 @@ function Home() {
                     a fullstack developer
                 </h1>
                 <br />
-                <a className="workbtn" href="/work">
-                    view my work
-                </a>
+                <Link to="/work" className="workbtn">Work</Link>
             </Container>
         </Styles>
     )
