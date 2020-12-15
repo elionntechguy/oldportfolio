@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Jumbotron, Container, CardDeck, Card, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import banner from '../assets/bg.jpg';
@@ -53,35 +53,65 @@ function Work(props) {
 
 
     useEffect(() => {
-        console.log(props.work)
-    }, [props.work])
+        console.log(props.loading)
+    }, [props.loading])
 
+    useEffect(() => {
+        if (props.loading) {
+        }
+    }, [props.loading])
+    
 
     return (
         <Styles>
-        <Container fluid>
-            <h1>
-                work
-            </h1>
+        { props.loading 
+            ? <Container fluid style={{height: '600px'}}>
+                
+                <h1>
+                    work
+                </h1>
 
-            <CardDeck>
+                <CardDeck>
+                    { props.loading ? <h2> Loading... </h2>
+                        : props.work.map((item, key) => {
+                        return <Card key={key} style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={item.workimg} />
+                            <Card.Body>
+                                <Card.Title>{item.title}</Card.Title>
+                                <Card.Text>
+                                {item.content}
+                                </Card.Text>
+                                <a className="btn btn-primary" target="_blank" href={item.link}>view</a>
+                            </Card.Body>
+                        </Card>
+                    })}
 
-                {props.work.map((item, key) => {
-                return <Card key={key} style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={item.workimg} />
-                    <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                        <Card.Text>
-                        {item.content}
-                        </Card.Text>
-                        <a className="btn btn-primary" target="_blank" href={item.link}>view</a>
-                    </Card.Body>
-                </Card>
-                })}
+                </CardDeck>
 
-            </CardDeck>
+            </Container>
+            : <Container fluid>
+                <h1>
+                    work
+                </h1>
 
-        </Container>
+                <CardDeck>
+                    { props.loading ? <h2> Loading... </h2>
+                        : props.work.map((item, key) => {
+                        return <Card key={key} style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={item.workimg} />
+                            <Card.Body>
+                                <Card.Title>{item.title}</Card.Title>
+                                <Card.Text>
+                                {item.content}
+                                </Card.Text>
+                                <a className="btn btn-primary" target="_blank" href={item.link}>view</a>
+                            </Card.Body>
+                        </Card>
+                    })}
+
+                </CardDeck>
+            </Container>
+        }
         </Styles>
     )
 }

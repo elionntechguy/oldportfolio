@@ -14,6 +14,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 function App() {
 
   const [work, setWork] = useState([]);
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
     ])
     .then(axios.spread((workRes) => {
       setWork(workRes.data);
+      setLoading(false);
     }));
   }, []);
 
@@ -30,7 +32,7 @@ function App() {
       <NavigationBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/work" render={(props) => <Work {...props} work={work} />} />
+          <Route exact path="/work" render={(props) => <Work {...props} work={work} loading={loading} />} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route component={NoMatch} />
